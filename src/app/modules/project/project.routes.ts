@@ -15,4 +15,7 @@ router.post(
 // GET single project by ID
 router.get("/:id", ProjectController.getProjectById);
 
+// GET all projects
+router.get("/", ProjectController.getAllProjects);
+
 export const ProjectRoutes = router;
