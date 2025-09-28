@@ -58,4 +58,4 @@ const getProjectById = async (projectId: string) => {
   return project;
 };
 
-export const ProjectService = { createProject };
+export const ProjectService = { createProject, getProjectById };
