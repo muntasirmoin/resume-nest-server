@@ -54,7 +54,7 @@ const deleteProject = catchAsync(async (req: Request, res: Response) => {
     success: true,
     statusCode: 200,
     message: "Project deleted successfully",
-    data: project,
+    data: null,
   });
 });
 

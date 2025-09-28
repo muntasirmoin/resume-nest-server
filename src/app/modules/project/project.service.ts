@@ -103,9 +103,26 @@ const deleteProject = async (id: string) => {
   return project;
 };
 
+// update project
+
+const updateProject = async (id: string, payload: Partial<IProject>) => {
+  const project = await prisma.project.findUnique({ where: { id } });
+  if (!project) {
+    throw new AppError(404, "Project not found");
+  }
+
+  const updatedProject = await prisma.project.update({
+    where: { id },
+    data: payload,
+  });
+
+  return updatedProject;
+};
+
 export const ProjectService = {
   createProject,
   getProjectById,
   getAllProjects,
   deleteProject,
+  updateProject,
 };
