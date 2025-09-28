@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { ProjectController } from "./project.controller";
 import { validateRequest } from "../../middlewares/validateRequest";
-import { createProjectSchema } from "./project.validate";
+import { createProjectSchema, updateProjectSchema } from "./project.validate";
 
 const router = Router();
 
@@ -22,6 +22,10 @@ router.get("/", ProjectController.getAllProjects);
 router.delete("/:id", ProjectController.deleteProject);
 
 // UPDATE project by ID
-router.put("/:id", ProjectController.updateProject);
+router.put(
+  "/:id",
+  validateRequest(updateProjectSchema),
+  ProjectController.updateProject
+);
 
 export const ProjectRoutes = router;
