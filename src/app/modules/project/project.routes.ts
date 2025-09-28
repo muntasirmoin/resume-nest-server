@@ -18,4 +18,7 @@ router.get("/:id", ProjectController.getProjectById);
 // GET all projects
 router.get("/", ProjectController.getAllProjects);
 
+// DELETE project by ID
+router.delete("/:id", ProjectController.deleteProject);
+
 export const ProjectRoutes = router;
