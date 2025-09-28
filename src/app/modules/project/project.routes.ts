@@ -5,10 +5,14 @@ import { createProjectSchema } from "./project.validate";
 
 const router = Router();
 
+// create project
 router.post(
   "/create",
   validateRequest(createProjectSchema),
   ProjectController.createProject
 );
+
+// GET single project by ID
+router.get("/:id", ProjectController.getProjectById);
 
 export const ProjectRoutes = router;
