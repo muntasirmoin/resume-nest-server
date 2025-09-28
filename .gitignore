@@ -1,0 +1,39 @@
+# Node modules
+/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables (do NOT commit secrets)
+.env
+.env.*.local
+
+# Prisma
+/prisma/dev.db      # if you have a local SQLite file
+/prisma/migrations  # optionally ignore migrations (some commit them, some don't)
+
+# Build output
+/dist/
+build/
+
+# Optional OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Optional IDE files
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.swp
+
+# Debugger files
+.idea/
+
