@@ -81,8 +81,25 @@ const deleteAbout = async (authorId: string) => {
   };
 };
 
+// update about by authorId
+const updateAbout = async (authorId: string, payload: any) => {
+  const existingAbout = await prisma.about.findUnique({ where: { authorId } });
+
+  if (!existingAbout) {
+    throw new AppError(404, "About information not found");
+  }
+
+  const updatedAbout = await prisma.about.update({
+    where: { authorId },
+    data: payload,
+  });
+
+  return updatedAbout;
+};
+
 export const AboutService = {
   createAbout,
   getAboutById,
   deleteAbout,
+  updateAbout,
 };
