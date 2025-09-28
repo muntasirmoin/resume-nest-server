@@ -26,6 +26,7 @@ model User {
   password  String
   role      Role     @default(USER)
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Add this line to define the relation back to Blog
   blogs   Blog[]    @relation("UserBlogs")

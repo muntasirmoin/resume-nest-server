@@ -39,6 +39,7 @@ export const seedAdmin = async () => {
         email: true,
         role: true,
         createdAt: true,
+        updatedAt: true,
       },
     });
 
