@@ -91,4 +91,21 @@ const getAllProjects = async (page = 1, limit = 10) => {
 
   return { projects, meta };
 };
-export const ProjectService = { createProject, getProjectById, getAllProjects };
+
+// delete project
+const deleteProject = async (id: string) => {
+  const project = await prisma.project.findUnique({ where: { id } });
+  if (!project) {
+    throw new Error("Project not found");
+  }
+
+  await prisma.project.delete({ where: { id } });
+  return project;
+};
+
+export const ProjectService = {
+  createProject,
+  getProjectById,
+  getAllProjects,
+  deleteProject,
+};
