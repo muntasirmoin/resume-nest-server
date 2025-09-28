@@ -12,4 +12,10 @@ router.post(
   AboutController.createAbout
 );
 
+// get single about by authorId
+router.get("/:authorId", AboutController.getAboutById);
+
+// delete about by authorId
+router.delete("/:authorId", AboutController.deleteAbout);
+
 export const AboutRoutes = router;
