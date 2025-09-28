@@ -21,4 +21,7 @@ router.get("/", ProjectController.getAllProjects);
 // DELETE project by ID
 router.delete("/:id", ProjectController.deleteProject);
 
+// UPDATE project by ID
+router.put("/:id", ProjectController.updateProject);
+
 export const ProjectRoutes = router;
