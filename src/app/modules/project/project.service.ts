@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { IProject } from "./project.interface";
 import AppError from "../../helpers/AppError";
+import { TMeta } from "../../utils/sendResponse";
 
 const prisma = new PrismaClient();
 
@@ -58,4 +59,36 @@ const getProjectById = async (projectId: string) => {
   return project;
 };
 
-export const ProjectService = { createProject, getProjectById };
+// get all project
+
+const getAllProjects = async (page = 1, limit = 10) => {
+  const skip = (page - 1) * limit;
+
+  const [projects, total] = await Promise.all([
+    prisma.project.findMany({
+      skip,
+      take: limit,
+      orderBy: { createdAt: "desc" },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        thumbnail: true,
+        projectLink: true,
+        liveSite: true,
+        features: true,
+        authorId: true,
+        createdAt: true,
+        updatedAt: true,
+      },
+    }),
+    prisma.project.count(),
+  ]);
+
+  const totalPage = Math.ceil(total / limit);
+
+  const meta: TMeta = { page, limit, totalPage, total };
+
+  return { projects, meta };
+};
+export const ProjectService = { createProject, getProjectById, getAllProjects };
