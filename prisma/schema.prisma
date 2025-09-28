@@ -30,6 +30,7 @@ model User {
   // Add this line to define the relation back to Blog
   blogs   Blog[]    @relation("UserBlogs")
   project Project[] @relation("UserProjects")
+  about   About?    @relation("UserAbout")
 }
 
 model Blog {
@@ -56,4 +57,20 @@ model Project {
   author      User     @relation("UserProjects", fields: [authorId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model About {
+  id        String   @id @default(cuid())
+  authorId  String   @unique
+  author    User     @relation("UserAbout", fields: [authorId], references: [id])
+  name      String
+  email     String
+  phone     String
+  bio       String
+  skills    String[]
+  linkedin  String?
+  github    String?
+  twitter   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
