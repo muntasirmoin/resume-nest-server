@@ -40,6 +40,38 @@ It serves as a digital representation of professional identity, showcasing perso
 |             | PATCH  | `/api/v1/about/:authorId` | `{ name?, email?, phone?, bio?, skills?, linkedin?, github?, twitter? }`         | Update About Me section by user ID            |
 |             | DELETE | `/api/v1/about/:authorId` | `authorId`                                                                       | Delete About Me section by user ID            |
 
+---
+
+## ⚡ Key Features
+
+- 🔐 **Authentication & Authorization**  
+  A secure login system that grants exclusive access to the portfolio owner.  
+  Only the authenticated user can enter the private dashboard and manage website content safely.
+
+- 🧭 **Interactive Dashboard**  
+  A centralized control hub where the owner can manage blogs, projects, and about information.  
+  Includes an elegant overview section with analytics and visual insights powered by a **Pie Chart**.
+
+- ✍️ **Dynamic Blog Management**  
+  A fully functional blog system enabling the owner to **create, read, update, and delete** blog posts with ease.  
+  Visitors can explore all published blogs, while updates appear instantly using **Incremental Static Regeneration (ISR)**.
+
+- ⚙️ **Project Management System**  
+   A powerful interface within the dashboard that allows the owner to **create, edit, update, or remove** projects dynamically —  
+   maintaining full control over showcased work in real time.
+
+- 👤 **About Me Section**  
+  A public introduction showcasing personal information, work experience, and technical skills.  
+  Built with **SSG (Static Site Generation)** for fast loading and SEO optimization.
+
+- 💼 **Projects Showcase**  
+  A sleek portfolio gallery that highlights personal and professional projects with live links, thumbnails, and feature details.  
+  Updated dynamically via **ISR**, ensuring fresh content without manual redeployment.
+
+---
+
+---
+
 ## 🧰 Technology Stack
 
 **Frontend:** Next.js, TypeScript, Tailwind CSS + Shadcn/UI  
