@@ -17,7 +17,7 @@ It serves as a digital representation of professional identity, showcasing perso
 
 ---
 
-### Api Endpoints
+### 📡 Api Endpoints
 
 | Module      | Method | Endpoint                  | Body / Params                                                                    | Description                                   |
 | ----------- | ------ | ------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------- |
@@ -67,8 +67,6 @@ It serves as a digital representation of professional identity, showcasing perso
 - 💼 **Projects Showcase**  
   A sleek portfolio gallery that highlights personal and professional projects with live links, thumbnails, and feature details.  
   Updated dynamically via **ISR**, ensuring fresh content without manual redeployment.
-
----
 
 ---
 
