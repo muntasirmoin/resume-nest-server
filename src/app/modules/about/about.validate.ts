@@ -13,7 +13,6 @@ export const createAboutSchema = z.object({
     .min(1, { message: "At least one skill is required" }),
   linkedin: z.string().url({ message: "Invalid LinkedIn URL" }).optional(),
   github: z.string().url({ message: "Invalid GitHub URL" }).optional(),
-  twitter: z.string().url({ message: "Invalid Twitter URL" }).optional(),
 });
 
 export const updateAboutSchema = z.object({
@@ -36,5 +35,5 @@ export const updateAboutSchema = z.object({
     .optional(),
   linkedin: z.string().url({ message: "Invalid LinkedIn URL" }).optional(),
   github: z.string().url({ message: "Invalid GitHub URL" }).optional(),
-  twitter: z.string().url({ message: "Invalid Twitter URL" }).optional(),
+  // twitter: z.string().url({ message: "Invalid Twitter URL" }).optional(),
 });

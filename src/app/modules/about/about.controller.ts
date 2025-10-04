@@ -54,9 +54,22 @@ const updateAbout = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+// GET /api/about
+const getAllAbouts = catchAsync(async (req: Request, res: Response) => {
+  const abouts = await AboutService.getAllAbouts();
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "All About info fetched successfully",
+    data: abouts,
+  });
+});
+
 export const AboutController = {
   createAbout,
   getAboutById,
   deleteAbout,
   updateAbout,
+  getAllAbouts,
 };

@@ -14,6 +14,8 @@ router.post(
 
 // get single about by authorId
 router.get("/:authorId", AboutController.getAboutById);
+// get about
+router.get("/", AboutController.getAllAbouts);
 
 // delete about by authorId
 router.delete("/:authorId", AboutController.deleteAbout);

@@ -97,9 +97,31 @@ const updateAbout = async (authorId: string, payload: any) => {
   return updatedAbout;
 };
 
+const getAllAbouts = async () => {
+  const abouts = await prisma.about.findMany({
+    select: {
+      id: true,
+      authorId: true,
+      name: true,
+      email: true,
+      phone: true,
+      bio: true,
+      skills: true,
+      linkedin: true,
+      github: true,
+      twitter: true,
+      createdAt: true,
+      updatedAt: true,
+    },
+  });
+
+  return abouts;
+};
+
 export const AboutService = {
   createAbout,
   getAboutById,
   deleteAbout,
   updateAbout,
+  getAllAbouts,
 };
